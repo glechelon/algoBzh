@@ -1,9 +1,15 @@
 <?php 
 include ('../outils/outilsSql.php');
-
+ session_start();
 connexionSql();
-session_start();
+if (!isset($_SESSION["isConnected"])){
 
+$_SESSION["isConnected"] = FALSE;
+
+}else if (isset($_SESSION["isConnected"])){
+    
+   
+}
 ?>
 
 <!doctype html>
@@ -38,14 +44,14 @@ session_start();
 
 
 <?php
-    
-   if ($_SESSION["isConnected"] != TRUE ){
-        
-        include("boutonConnex.php");
-
- }else{
+ if ($_SESSION["isConnected"] == FALSE){
      
-     echo "banane";
+include("boutonConnex.php");
+
+ }else if ($_SESSION["isConnected"] == TRUE ){
+       
+include("boutonDeco.php");
+    
  }
 ?>
 

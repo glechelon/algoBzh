@@ -38,6 +38,25 @@ text-align:center;
 text-decoration:none;
 color:#e6ffd2;
 }
+#deconnexion
+{
+display:inline-block;
+position:relative;
+margin-left:25%;
+background:#ff6a00;
+width:130px;
+height:40px;
+border-radius:10px;
+padding-top:5px;
+color:#e6ffd2;
+font-size:1.5em;
+text-align:center;
+}
+#deconnexion a
+{
+text-decoration:none;
+color:#e6ffd2;
+}
 #divacacher a
 {
 display:inline-block;
