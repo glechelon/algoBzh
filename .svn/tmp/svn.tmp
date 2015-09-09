@@ -1,0 +1,9 @@
+	<form id="form_co" action="../outils/connexion.php" method="post">
+	
+		<input class="form_style" type ="text" name="pseudo" placeholder=" pseudo " /><br/>
+		<input class="form_style" type ="text" name="mdp" placeholder=" mot de passe "/>
+		<input type = "submit" value = "connexion"/>
+		
+	</form>
+	
+	<a href="#null" onclick= "window.open('demandeMdp.php', 'Demande de mot de passe', '', 'width=800, height =400')" > Demander un mot de passe  </a>

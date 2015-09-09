@@ -1,0 +1,13 @@
+	<form action="../outils/Connexion.php" method="post">
+	
+		 Pseudo:
+		<input type ="text" name="pseudo" size ="20" />
+		 Mot de passe:
+		<input type ="text" name="mdp" size ="20" />
+		
+		<br />
+		<br />
+		 
+		<input type = "submit" value = "connexion"/>
+		
+	</form>

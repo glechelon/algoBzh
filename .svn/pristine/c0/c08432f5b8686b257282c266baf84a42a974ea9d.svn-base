@@ -1,0 +1,87 @@
+<?php 
+
+//fonction de connexion à la basz de donnée.
+
+function connexionSql(){
+	
+try {
+	$connexion = new PDO('mysql:host=localhost;dbname=algobreizh_gestion','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+} catch (Exception $e) {
+	
+	echo "Impossible de se connecter à la base de donnée, Erreur:". $e->getMessage() . "</br>";
+}
+
+
+return $connexion;
+}
+
+//fonction qui éxécute des requétes sql rentrée en paramétre
+
+function requeteExe($connexion, $requete){
+
+
+$resultat = $connexion->query($requete);
+
+return $resultat;
+}
+
+
+//fonction qui vérifie l'éxistance d'un nom d'utilisateur entré en paramètre dans la base de donnée 
+
+function verifUserExist($pseudo){
+	
+	$co = connexionSql();	
+	$req = "SELECT identifiant FROM utilisateur WHERE identifiant ='".$pseudo."'";	
+	$res = requeteExe($co, $req);
+	$res = $res->fetch();
+	if ($res['identifiant'] == $pseudo){
+		
+		$exist = true;
+		
+	}else {
+		
+		$exist = false;
+	}
+	
+	return $exist;
+	
+}
+
+//fonction qui vérifie l'éxistance d'un couple nom d'utilisateur et mot de passe renté en paramète dans la base de donnée
+
+function testMdp($pseudo, $mdp){
+	
+	$co = connexionSql();
+	$req = "select mdp from utilisateur where identifiant ='".$pseudo."'";
+	$res = requeteExe ($co, $req);
+	$mdpTest = $res->fetch();
+	$hash = hashMdp($mdp);
+	
+	if ($mdpTest['mdp'] == $hash){
+		
+		$exist = true;
+	}else{
+		
+		$exist = false;
+	}
+}
+
+
+
+
+
+//fonction qui hashe le mod de passe renté en parmaétre et retourne ce dernier hashé
+
+function hashMdp($mdp){
+	
+	
+	
+	$hash = password_hash($mdp, array('cost'=>12, 'salt'=>"FlI78FilMgi86",));
+	$tabMdp =  explode("-", $hash);	
+	return $hash;
+}
+
+
+
+
+?>
