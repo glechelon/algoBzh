@@ -27,7 +27,9 @@ else {
 
 if ($acces == true){
 	
-	echo "c'bon";
+	header("location: ../pages/index.php");
+    session_start();
+
 }
 
 else{
