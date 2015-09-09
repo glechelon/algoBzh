@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
 include("outilsSql.php");
 
 $pseudo = $_POST['id'];
@@ -28,7 +29,7 @@ else {
 if ($acces == true){
 	
 	header("location: ../pages/index.php");
-    session_start();
+    $_SESSION['isConnected'] = TRUE;
 
 }
 

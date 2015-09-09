@@ -2,6 +2,8 @@
 include ('../outils/outilsSql.php');
 
 connexionSql();
+session_start();
+
 ?>
 
 <!doctype html>
@@ -30,16 +32,24 @@ connexionSql();
 <header>
 <div id="titre">
 	<h1>
-	<img src="../img/AlgoBreizh_Logo_128px.png">
+	<img src="../img/AlgoBreizh_Logo_128px.png" alt="#">
 	AlgoBreizh</h1>
 </div>
 
-<div id="connexion">
-	<a href="javascript: switchInfoPerso();">connexion</a>
-</div>
-	<div  id="divacacher" style="display: none;">
-		<?php include 'formConnexion.php' ?>
-	</div>
+
+<?php
+    
+   if ($_SESSION["isConnected"] != TRUE ){
+        
+        include("boutonConnex.php");
+
+ }else{
+     
+     echo "banane";
+ }
+?>
+
+
 </header>
 
 <div class="container">
