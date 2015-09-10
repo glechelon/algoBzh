@@ -1,7 +1,11 @@
 <?php 
 
-session_start();
-include("outilsSql.php");
+//Inclusion des différentes librairies/outils
+include ('../outils/outilsSql.php');
+include ('../outils/pdoSession.php');
+
+//session_start();
+$session = new session();
 
 $pseudo = $_POST['id'];
 $mdp = $_POST['mdp'];
