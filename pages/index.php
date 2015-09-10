@@ -4,9 +4,11 @@
 include ('../outils/outilsSql.php');
 include ('../outils/pdoSession.php');
 
+
+//Ouverture/accès Session
 $session = new session();
 
-
+//Connexion à la base de donnèe
 connexionSql();
 
 ?>
@@ -20,16 +22,7 @@ connexionSql();
    <link rel="stylesheet" href="style.css">
    <title>accueil</title>
    
-   <script type="text/javascript">
-	function switchInfoPerso()
-	{
-	divInfo = document.getElementById('divacacher');
-	if (divInfo.style.display == 'none')
-	divInfo.style.display = 'block';
-	else
-	divInfo.style.display = 'none';
-	}
-	</script>
+   <script type="text/javascript" src="../JS/lib.js"></script>
 </head>
 
 <body class = "site">
