@@ -1,11 +1,10 @@
 <?php 
 
 //Inclusion des différentes librairies/outils
-include ('../outils/outilsSql.php');
-include ('../outils/pdoSession.php');
+
 
 //session_start();
-$session = new session();
+
 
 $pseudo = $_POST['id'];
 $mdp = $_POST['mdp'];
@@ -32,7 +31,7 @@ else {
 
 if ($acces == true){
 	
-	header("location: ../pages/index.php");
+	header("location: ../pages/index.php?group=pages&page=espaceClient");
     $_SESSION['isConnected'] = TRUE;
 
 }
@@ -42,7 +41,6 @@ else{
 	echo "c'pas bon";
 	echo "<br/>";
 	
-	include "../pages/formConnexion.php";
 	
 
 }

@@ -1,4 +1,4 @@
-	<form id="form_co" action="../outils/connexion.php" method="post">
+	<form id="form_co" action="index.php?group=outils&amp;page=connexion" method="post">
 	
 		<input class="form_style" type ="text" name="id" placeholder=" pseudo " /><br/>
 		<input class="form_style" type ="password" name="mdp" placeholder=" mot de passe "/>

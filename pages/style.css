@@ -1,6 +1,6 @@
 html
 {
-background:url(../img/background1.jpg) top center;
+background:url("../img/bg.jpg");
 font-family:trebuchet MS;
 }
 body
