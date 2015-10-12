@@ -1,17 +1,9 @@
-<?php 
-
-
-
-
-
-
-
-?>
+﻿    <meta charset="utf-8"/>
 
 	<form action="../outils/envoiMdp.php" method="post">
 	
-		 Entrez votre num�ro client: 
-		<input type ="text" name="numCli" size ="20" />
+		 <label> Entrez votre numéro client: </label>
+		<input type ="text" name="numCli" />
 
 		
 		<br />

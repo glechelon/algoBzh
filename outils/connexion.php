@@ -8,11 +8,11 @@
 
 $pseudo = $_POST['id'];
 $mdp = $_POST['mdp'];
-$exist = verifUserExist($pseudo);
+$exist = verifUserExist($connexion, $pseudo);
 
 if ($exist == true){
 	
-	if (testMdp($pseudo,$mdp) == true){
+	if (testMdp($connexion, $pseudo,$mdp) == true){
 		
 		$acces = true;
 		

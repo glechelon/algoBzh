@@ -1,21 +1,24 @@
 <?php 
 
 //Inclusion des différentes librairies/outils
-include ('../outils/outilsSql.php');
+include '../outils/outilsSql.php';
 include ('../outils/pdoSession.php');
 include ('../outils/affichage.php');
+include ('../outils/Db.php');
+
 
 
 //Ouverture/accès Session
 $session = new session();
 
 //Connexion à la base de donnèe
-connexionSql();
+$connexion = connexion();
+
 
 ?>
 
 <!doctype html>
-<html lang=''>
+<html lang='fr'>
 <head>
    <meta charset='utf-8'>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,29 +48,8 @@ affBouton($session);
 </header>
 
 <div class="container">
-<?php include 'menu.html';?>
-	
-	<div class="barre_horizontale"></div>
 
-<?php
-    
-if (!isset($_GET["page"]) && !isset($_GET["group"])){
-    
-    $_GET["page"] = "accueil";
-}
- 
-elseif($_GET["group"] == "pages"){
-  
-include ("".$_GET['page'].".php");
 
-}
-
-else{
-    
-    include ("../".$_GET["group"]."/".$_GET["page"].".php");
-}
-
-?>
 </div>
 
 <footer>

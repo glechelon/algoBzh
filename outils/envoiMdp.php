@@ -1,5 +1,7 @@
 <?php
+      
 include "outilsSql.php";
+include "lib.php";
 
 $numCli = "";
 $numCli = $_POST['numCli'];
@@ -7,7 +9,7 @@ $exist = verifNumCli ( $numCli );
 
 if ($exist == true) {
 	
-	
+	sendPass($numCli, $co);
 	
 	
 	

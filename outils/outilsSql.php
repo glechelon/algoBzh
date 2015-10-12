@@ -1,18 +1,24 @@
 <?php 
+//Variable de configuration
+
+
+
 
 //fonction de connexion à la basz de donnée.
 
-function connexionSql(){
+function connexion(){
+
+$host = 'localhost';
+$dbName = 'algobreizh_gestion';
+$user = 'root';
+$pwd = '';
 	
 try {
-	$connexion = new PDO('mysql:host=localhost;dbname=algobreizh_gestion','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$connexion = new PDO('mysql:host='.$host.';dbname='.$dbName.'',$user,$pwd,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 } catch (Exception $e) {
 	
 	echo "Impossible de se connecter à la base de donnée, Erreur:". $e->getMessage() . "</br>";
-}
-
-
-return $connexion;
+}return $connexion;
 }
 
 //fonction qui éxécute des requétes sql rentrée en paramétre
@@ -28,11 +34,11 @@ return $resultat;
 
 //fonction qui vérifie l'éxistance d'un nom d'utilisateur entré en paramètre dans la base de donnée 
 
-function verifUserExist($pseudo){
+function verifUserExist($connexion, $pseudo){
 	
-	$co = connexionSql();	
+		
 	$req = "SELECT id FROM utilisateur WHERE id ='".$pseudo."'";	
-	$res = requeteExe($co, $req);
+	$res = $connexion->query($req);
 	$res = $res->fetch();
 	if ($res['id'] == $pseudo){
 		
@@ -49,11 +55,11 @@ function verifUserExist($pseudo){
 
 //fonction qui vérifie l'éxistance d'un couple nom d'utilisateur et mot de passe renté en paramète dans la base de donnée
 
-function testMdp($pseudo, $mdp){
+function testMdp($connexion, $pseudo, $mdp){
 	
-	$co = connexionSql();
+	
 	$req = "select mdp from utilisateur where id ='".$pseudo."'";
-	$res = requeteExe ($co, $req);
+	$res = $connexion->query($req);
 	$mdpTest = $res->fetch();
 	$hash = hashMdp($mdp);
 	
@@ -73,7 +79,7 @@ function testMdp($pseudo, $mdp){
 
 function verifNumCli($numCli){
 	
-	$co = connexionSql();
+	$co = connexion();
 	$req = "SELECT id FROM customer WHERE id = '".$numCli."'";
 	$res = requeteExe ($co, $req);
 	$test = $res->fetch();

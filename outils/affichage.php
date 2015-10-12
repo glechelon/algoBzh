@@ -11,7 +11,7 @@ function affBouton($session){
        
         include("boutonDeco.php");
 
-        echo "<a href='index.php?page=espaceClient'>Expace client</a> ";
+       
     }
 }
 

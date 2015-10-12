@@ -6,4 +6,4 @@
 		
 	</form>
 	
-	<a href="#null" onclick= "window.open('demandeMdp.php', 'Demande de mot de passe', '', 'width=800, height =400')" > Demander un mot de passe  </a>
+	<a class="demMdp" href="index.php?group=pages&amp;page=demandeMdp" > Demander un mot de passe  </a>

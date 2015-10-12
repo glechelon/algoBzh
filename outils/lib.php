@@ -1,6 +1,6 @@
 <?php 
 
-include "outilsSql.php";
+
 
 //fonction d'envoi du mail contenant le mot de passe du client
 
