@@ -1,13 +1,19 @@
-<?php
-  
+<script src="../JS/modifCss.js"></script>
 
-    if ($session->checkConnexion()){
+</script>
+
+<?php
+ 
+echo "<script> cssConnected(); </script>";
+
+if ($session->checkConnexion()) {
    
     echo "je suis un espace client";
 
-    }else{
+
+} else {
         
         echo "t'as pas accès ah ah";
-    }
+}
 
 ?>

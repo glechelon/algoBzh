@@ -6,3 +6,8 @@ function switchInfoPerso()
 	else
 	divInfo.style.display = 'none';
 	}
+
+  function affTitreP(){
+    
+    titreP = document.getElementById("")
+  }
