@@ -9,7 +9,7 @@ $exist = verifNumCli ( $numCli );
 
 if ($exist == true) {
 	
-	sendPass($numCli, $co);
+	sendPass($numCli);
 	
 	
 	

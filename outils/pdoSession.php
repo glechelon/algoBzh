@@ -30,6 +30,12 @@
 
             return $res;
         }
+
+        public function deconnexion(){
+           
+           $_SESSION["isConnected"] = FALSE; 
+
+        }
         
        
     }    

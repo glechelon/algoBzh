@@ -9,7 +9,7 @@
 function connexion(){
 
 $host = 'localhost';
-$dbName = 'algobreizh_gestion';
+$dbName = 'algobhz';
 $user = 'root';
 $pwd = '';
 	
@@ -80,7 +80,7 @@ function testMdp($connexion, $pseudo, $mdp){
 function verifNumCli($numCli){
 	
 	$co = connexion();
-	$req = "SELECT id FROM customer WHERE id = '".$numCli."'";
+	$req = "SELECT id FROM utilisateur WHERE id = '".$numCli."'";
 	$res = requeteExe ($co, $req);
 	$test = $res->fetch();
 	
@@ -119,7 +119,15 @@ function hashMdp($mdp){
 }
 
 
+function recupMail($numCli){
+  
+  $co = connexion();
+  $req = "SELECT mail FROM utilisateur WHERE id ='".$numCli."'";
+  $res = requeteExe($co, $req);
+  $res = $res->fetchColumn();
+  return ($res);
 
+}
 
 
 

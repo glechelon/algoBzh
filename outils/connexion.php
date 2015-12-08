@@ -1,9 +1,15 @@
 <?php 
 
+require "outilsSql.php";
+require "lib.php";
+require "pdoSession.php";
+
 //Inclusion des différentes librairies/outils
 
 
-//session_start();
+
+$connexion = connexion();
+$session = new session();
 
 
 $pseudo = $_POST['id'];
@@ -31,7 +37,7 @@ else {
 
 if ($acces == true){
 	
-	header("location: ../pages/index.php?group=pages&page=espaceClient");
+	header("location: ../pages/espaceClient.php");
     $_SESSION['isConnected'] = TRUE;
 
 }
