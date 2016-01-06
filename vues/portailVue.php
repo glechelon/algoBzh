@@ -55,7 +55,7 @@ if (isset($_SESSION["error"])) {
   ?>
     </p>
 
-	<p>Vous avez oublié votre mot de passe... <a class="" href="index.php?p=demandeMdp" > Demander un mot de passe  </a></p>
+	<p>Vous avez oublié votre mot de passe... <a class="" href="index.php?c=demandeMdp" > Demander un mot de passe  </a></p>
 	
 
 </div>

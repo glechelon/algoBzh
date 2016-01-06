@@ -1,6 +1,6 @@
 <?php
 
-function testCo($connexion){
+function testCo ($connexion) {
 
     $pseudo = $_POST['id'];
     $mdp = $_POST['mdp'];
@@ -25,15 +25,16 @@ function testCo($connexion){
 	    $acces = false;
     }
 
-    if ($acces == true){
+    if ($acces == true) {
 	
-	    header("location: index.php?p=espaceClient");
-        $_SESSION['isConnected'] = TRUE;
+	    
+        $_SESSION['isConnected'] = "TRUE";
 
     }
 
     else{
-	
+	      
+            $_SESSION["isConnected"] = "FALSE";
             $_SESSION["error"]= "C'pas bon!";
 	
 	
