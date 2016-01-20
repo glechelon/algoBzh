@@ -37,7 +37,7 @@ else {
 
 if ($acces == true){
 	
-	header("location: ../pages/espaceClient.php");
+	header("location: ../pages/espaceUtilisateur.php");
     $_SESSION['isConnected'] = TRUE;
 
 }

@@ -2,46 +2,61 @@
 
 function testCo ($connexion) {
 
-    $pseudo = $_POST['id'];
-    $mdp = $_POST['mdp'];
-    $exist = verifUserExist($connexion, $pseudo);
+    if (isset($_POST["id"]) && isset($_POST["mdp"])) {
 
-    if ($exist == true) {
-	
-        if (testMdp($connexion, $pseudo, $mdp) == true) {
-		
+
+        $pseudo = $_POST['id'];
+        $mdp = $_POST['mdp'];
+        $exist = verifUserExist($connexion, $pseudo);
+
+        if ($exist == true) {
+
+            if (testMdp($connexion, $pseudo, $mdp) == true) {
+
                 $acces = true;
-		
-	    }
-	
-	    else{
-		
-		    $acces = false;
-	    }
-    }
 
-    else {
-	
-	    $acces = false;
-    }
+            } else {
 
-    if ($acces == true) {
-	
-	    
-        $_SESSION['isConnected'] = "TRUE";
+                $acces = false;
 
-    }
+            }
+        } else {
 
-    else{
-	      
+            $acces = false;
+        }
+
+        if ($acces == true) {
+
+
+            $_SESSION['isConnected'] = "TRUE";
+            $_SESSION['codeClient'] = $_POST["id"];
+            $_SESSION['typeCompte'] = selectType($_POST["id"]);
+
+
+        } else {
+
             $_SESSION["isConnected"] = "FALSE";
-            $_SESSION["error"]= "C'pas bon!";
-	
-	
+
+
+            ob_start();
+
+            ?>
+
+            <p>Une erreur s'est produite dans l'authantification (identifiant ou mot de passe incorrect).</p>
+
+
+
+
+            <?php
+
+            $_SESSION["error"] = ob_get_clean();
+
+        }
+    } else {
+
 
     }
 
 }
 ?>
-
 
