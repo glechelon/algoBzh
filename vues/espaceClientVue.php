@@ -39,12 +39,13 @@
         <nav class="navbar navbar-default col-lg-10 menu">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Espace Client:</a>
+                    <a class="navbar-brand" href="index.php?c=espaceUtilisateur">Espace Client:</a>
                 </div>
                 <div>
                     <ul class="nav navbar-nav">
                         <li><a href="index.php?c=espaceUtilisateur&amp;p=factures">Factures</a></li>
                         <li><a href="index.php?c=espaceUtilisateur&amp;p=commandes">Mes commandes</a></li>
+                        <li><a href="index.php?c=espaceUtilisateur&amp;p=saisir">Saisir une commande</a></li>
                     </ul>
                 </div>
             </div>

@@ -20,7 +20,8 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
 
         } else if ($_GET["p"] == "factures") {
 
-            $contenu = "vues/parts/facture.php";
+            $r = selectFactures();
+            $contenu = "vues/parts/affFacture.php";
             include "vues/espaceClientVue.php";
 
         } else if ($_GET["p"] == "commandes") {
@@ -29,6 +30,11 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
             $contenu = "vues/parts/affCommande.php";
             include "vues/espaceClientVue.php";
 
+        } else if ($_GET["p"] == "saisir"){
+
+            $r = selectProduits();
+            $contenu = "vues/parts/produits.php";
+            include "vues/espaceClientVue.php";
         }
 
     } else {

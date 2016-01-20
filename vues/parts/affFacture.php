@@ -1,0 +1,1 @@
+<p>  <?php affFactures($r); ?>   </p>
