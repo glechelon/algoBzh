@@ -1,6 +1,8 @@
 
 <?php //Controlleur espace  client.
 
+include "modeles/espaceUtilisateur/requetesSql.php";
+include "modeles/espaceUtilisateur/libAffichage.php";
 
 $session = new Session();
 if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
@@ -16,14 +18,15 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
             $session->deconnexion();
             header("location:index.php");
 
-        } else if ($_GET["p"] == "produits") {
+        } else if ($_GET["p"] == "factures") {
 
-            $contenu = "vues/parts/acc.html";
+            $contenu = "vues/parts/facture.php";
             include "vues/espaceClientVue.php";
 
         } else if ($_GET["p"] == "commandes") {
 
-            $contenu = "vues/parts/acc.html";
+            $r = selectCommandes();
+            $contenu = "vues/parts/affCommande.php";
             include "vues/espaceClientVue.php";
 
         }
