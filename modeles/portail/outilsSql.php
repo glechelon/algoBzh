@@ -15,6 +15,7 @@ $pwd = '';
 	
 try {
 	$connexion = new PDO('mysql:host='.$host.';dbname='.$dbName.'',$user,$pwd,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$connexion->exec("SET CHARACTER SET utf8");
 } catch (Exception $e) {
 	
 	echo "Impossible de se connecter � la base de donn�e, Erreur:". $e->getMessage() . "</br>";

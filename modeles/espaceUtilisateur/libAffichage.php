@@ -40,7 +40,6 @@ function affFactures($r){
 
 
 
-
 }
 
 
@@ -50,9 +49,12 @@ function affProduits($r){
 
 
         while ($produit = $r->fetch(PDO::FETCH_ASSOC)){
-
-            echo   $produit["codeArticle"];
-            echo "<br/>";
+            echo "<tr>";
+            echo "<td> <img src=".$produit["imagesArticle"]."><img/><td/>";
+            echo "<td>".$produit["libelleArticle"]." <br/> <div class = 'enPetit'>". $produit["codeArticle"]."<div/><td/>";
+            echo "<td class='pCenter'>".$produit["prix"]." € <td/>";
+            echo "<td>".$produit["unite"]."<td/>";
+            echo "<tr/>";
         }
     } else {
 
