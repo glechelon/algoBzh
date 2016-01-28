@@ -6,6 +6,9 @@ include "modeles/espaceUtilisateur/Commandes.php";
 include "modeles/espaceUtilisateur/Factures.php";
 include "modeles/espaceUtilisateur/Produits.php";
 include "modeles/espaceUtilisateur/Familles.php";
+include "modeles/espaceUtilisateur/Panier.php";
+include "modeles/espaceUtilisateur/ProduitS.php";
+
 
 $session = new Session();
 if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
@@ -36,6 +39,7 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
 
         } else if ($_GET["p"] == "saisir"){
 
+            $panier = new Panier();
             $produits = new Produits();
             $familles = new Familles();
             $contenu = "vues/parts/produits.php";

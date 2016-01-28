@@ -8,6 +8,7 @@ class Famille
     private $famille;
 
 
+
     function Famille($n){
         $n = intval($n);
         $co = connexion();
@@ -15,6 +16,7 @@ class Famille
         $res = requeteExe($co, $req);
         $res =  $res->fetchAll(PDO::FETCH_ASSOC);
         $this->famille = $res;
+
     }
 
     function affichage(){
