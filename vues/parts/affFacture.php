@@ -1,1 +1,1 @@
-<p>  <?php affFactures($r); ?>   </p>
+<p>  <?php $factures->affichage(); ?>   </p>

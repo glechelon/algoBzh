@@ -1,13 +1,14 @@
-function switchInfoPerso()
-	{
-	divInfo = document.getElementById('divacacher');
-	if (divInfo.style.display == 'none')
-	divInfo.style.display = 'block';
-	else
-	divInfo.style.display = 'none';
+function getFamille(n){
+
+var xmlHttp = new XMLHttpRequest();
+	xmlHttp.onreadystatechange	= function(){
+
+		document.getElementById("zoneTab").innerHTML = "";
+		document.getElementById("zoneTab").innerHTML = xmlHttp.responseText;
 	}
 
-  function affTitreP(){
-    
-    titreP = document.getElementById("")
-  }
+	xmlHttp.open("GET", "modeles/espaceUtilisateur/famillesAjax.php?f=" + n , true);
+	xmlHttp.send();
+
+
+}

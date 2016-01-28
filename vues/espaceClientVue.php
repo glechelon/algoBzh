@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <title>Accueil</title>
 
-    <script type="text/javascript" src="../JS/lib.js"></script>
+    <script type="text/javascript" src="JS/lib.js"></script>
 </head>
 
 <body>
@@ -62,10 +62,7 @@
         <div class="col-lg-1"></div>
     </div>
 </div>
-</div>
 
-
-</div>
 <footer class="footer">
     <div class="col-lg-1"></div>
     <div class="panel-footer col-lg-10" >

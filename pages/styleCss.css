@@ -71,3 +71,37 @@ footer{
 }
 
 
+.filtrer{
+
+    display: inline;
+}
+
+
+.liste_h li{
+
+
+      margin-left: 2%;
+
+}
+
+.liste_h li:first-child{
+
+    margin-left: 0%;
+}
+
+.t_en_ligne{
+
+    font-size:large;
+
+}
+
+.qt{
+
+
+    width:25%;
+}
+
+
+
+
+

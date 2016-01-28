@@ -1,6 +1,6 @@
 <p>
 
-    <?php affCommandes($r); ?>
+    <?php $commandes->affichage(); ?>
 
 
 </p>

@@ -1,8 +1,11 @@
 
 <?php //Controlleur espace  client.
 
-include "modeles/espaceUtilisateur/requetesSql.php";
-include "modeles/espaceUtilisateur/libAffichage.php";
+
+include "modeles/espaceUtilisateur/Commandes.php";
+include "modeles/espaceUtilisateur/Factures.php";
+include "modeles/espaceUtilisateur/Produits.php";
+include "modeles/espaceUtilisateur/Familles.php";
 
 $session = new Session();
 if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
@@ -20,21 +23,25 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
 
         } else if ($_GET["p"] == "factures") {
 
-            $r = selectFactures();
+            $factures = new Factures();
             $contenu = "vues/parts/affFacture.php";
             include "vues/espaceClientVue.php";
 
         } else if ($_GET["p"] == "commandes") {
 
-            $r = selectCommandes();
+
+            $commandes = new Commandes();
             $contenu = "vues/parts/affCommande.php";
             include "vues/espaceClientVue.php";
 
         } else if ($_GET["p"] == "saisir"){
 
-            $r = selectProduits();
+            $produits = new Produits();
+            $familles = new Familles();
             $contenu = "vues/parts/produits.php";
             include "vues/espaceClientVue.php";
+
+
         }
 
     } else {
