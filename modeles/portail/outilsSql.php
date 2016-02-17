@@ -12,7 +12,7 @@ $host = 'localhost';
 $dbName = 'newalb';
 $user = 'root';
 $pwd = '';
-	
+
 try {
 	$connexion = new PDO('mysql:host='.$host.';dbname='.$dbName.'',$user,$pwd,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 	$connexion->exec("SET CHARACTER SET utf8");
