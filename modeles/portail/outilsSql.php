@@ -9,7 +9,7 @@
 function connexion(){
 
 $host = 'localhost';
-$dbName = 'algobzh';
+$dbName = 'newalb';
 $user = 'root';
 $pwd = '';
 	
