@@ -1,13 +1,81 @@
-html{
-    
-
+@font-face {
+    font-family: "GrenadierNF";
+    src: url('fonts/GrenadierNF.ttf');
 }
+
+@font-face {
+    font-family: "PopularCafeNF";
+    src: url('fonts/PopularCafeNF.ttf');
+}
+
+@font-face {
+    font-family: "Market_Deco";
+    src: url('fonts/Market_Deco.ttf');
+}
+@font-face {
+    font-family: "Raisin des Sables";
+    src: url('fonts/Raisin des Sables.ttf');
+}
+@font-face {
+    font-family: "American Captain";
+    src: url('fonts/American Captain.ttf');
+}
+html{
+	margin:0;
+  	padding:0;
+   	background:url(../img/background7.jpg) no-repeat center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	}
 
 body{
-    
+	/*background:none;*/
+    opacity:0.8;
     font-family: 'Trebuchet MS';
-    margin-top: 2%;
+	margin-top: 2%;
+	margin-left:10%;
+	margin-right:10%;
+	/*background-attachment:local;*/
 }
+
+h1
+{
+	font-family: "Raisin des Sables";
+	font-size:80px;
+	color:#40bfbf;
+	/*height:200px;*/
+}
+h1 span
+{
+	font-family: "Raisin des Sables";
+	font-size:80px;
+}
+label{
+	font-family: "Market_Deco";
+	font-size:0.8em;
+}
+h3{
+	font-family: "Market_Deco";
+}
+.connexion{
+	font-size:1.0em;
+}
+
+.inscrip{
+	font-family: "Market_Deco";
+}
+.police{
+	font-family: "Market_Deco";
+}
+
+.image1{
+	background:url(../img/pecheurPied1.jpg) no-repeat;
+	background-size: 100% auto;
+}
+/*.image2{
+	background:url(../img/forme3.png) no-repeat;
+	background-size: 100% auto;
+}*/
 
 .menu{
     
@@ -23,9 +91,11 @@ body{
 }
 
 .en-tete{
-    
-    margin-bottom: 5%;
-    
+   /* border:1px solid blue;*/
+    margin-bottom: 2%;
+}
+.user{
+	padding-top:5%;
 }
 
 .btn-co{
@@ -34,82 +104,211 @@ body{
 }
 
 .btn-deco{
-    
-    margin-top: 30%;
+	margin-top:25%;
+	float:right;
+}
+.parallelogramme{
+	width:300px;
+	height:100px;
+	background:#069;
+	-webkit-transform:skew(-30deg);
+	-moz-transform:skew(-30deg);
+	-o-transform:skew(-30deg);
+	tranform:skew(-30deg);
 }
 
 .btn-deco a{
-    
     text-decoration: none;
+	font-family: "Market_Deco";
+}
+.btn, .btn-warning, .btn-deco a{
+	font-family: "Market_Deco";
 }
 
 footer{
-    
     text-align: center;
     margin-top: 7%;
 }
 
 .pCenter{
-
-
     text-align: center;
 }
-
-
-.tableProd{
-
-
-    width : 100%;
+.elementprod{
+	border: 1px solid white;
+	background-color:#22B573;
+	border-radius:5px;
+	margin-left:5px;
+	margin-top:5px;
+	margin-bottom:5px;
+	height:40px;
+	width:200px;
+	text-align:center;
+	padding-top:10px;
+}
+.elementprod a{
+	color:white;
+	/*font-family: "Market_Deco";*/
+	text-decoration:none;
+}
+.elementprod a:hover{
+	color:#22B573;
+	background-color:white;
+}
+.elementprod:hover{
+	border: 1px solid #22B573;
+	background-color:white;
 }
 
-.enPetit{
+/*************************************************/
+/************* TEST PRODUITS *********************/
+/*************************************************/
 
+.gallery
+{
+	padding: 100px 0px;
+}
 
-    font-size: x-small;
-    font-style: italic;
-    color: #9d9d9d;
+.filimg
+{
+	padding: 10px 15px;
+	cursor:pointer;
+}
+.galleryimg
+{
+	margin-top: 30px;
+}
+.mix
+{
+	padding: 0px;
+}
+
+#galleryimg .mix{
+	display: none;
 }
 
 
-.filtrer{
+.grid {
+	position: relative;
+	margin: 20px auto 0px;
+	/*max-width: 1000px;*/
+	list-style: none;
+	text-align: center;
+}
 
-    display: inline;
+figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.05em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+figure figcaption::before,
+figure figcaption::after {
+	pointer-events: none;
+}
+
+figure figcaption,
+figure figcaption > a {
+	position: absolute;
+	text-decoration:none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+figure figcaption > a {
+	z-index: 1000;
+	text-indent: 100%;
+	text-decoration:none;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+figure h2 {
+	font-family:"Market_Deco";
+	word-spacing: -0.15em;
+	/*font-weight: 100;*/
+	font-size:1.15em;
+}
+
+figure h2{
+	margin: 0;
+}
+
+figure p {
+	letter-spacing: 1px;
+	/*font-size: 68.5%;*/
+	margin-bottom:5%;
 }
 
 
-.liste_h li{
-
-
-      margin-left: 2%;
-
+figure.effect-Beauty{
+	background-color: #40bfbf/*#17819c*/;
 }
 
-.liste_h li:first-child{
-
-    margin-left: 0%;
+figure.effect-Beauty img {
+	opacity: 0.8;
+	-webkit-transition: opacity 0.35s, -webkit-transform 1.55s;
+	transition: opacity 0.35s, transform 1.55s;
+	-webkit-transform: scale(1.25);
+	transform: scale(1.25);
+	width: 100%;
 }
 
-.t_en_ligne{
-
-    font-size:large;
-
+figure.effect-Beauty:hover img {
+	opacity: 0.5;
+	-webkit-transform: scale(1);
+	transform: scale(1);
 }
 
-.qt{
-
-
-    width:25%;
+figure.effect-Beauty h2 {
+	/*margin-top: 2%;*/
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,50px,50px);
+	transform: translate3d(0,50px,50px);
 }
 
-input[type="number"]{
-
-    width: 20%;
-
-
-
+figure.effect-Beauty p {
+	margin: 1em 0 2em;
+	padding: 15px;
+	border: 1px solid #fff;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 1.35s, transform 0.35s;
+	-webkit-transform: translate3d(0,50px,0) scale(1.8);
+	transform: translate3d(0,50px,0) scale(1.8);
 }
 
+figure.effect-Beauty:hover h2 {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
 
-
-
-
+figure.effect-Beauty:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0) scale(1);
+	transform: translate3d(0,0,0) scale(1);
+}

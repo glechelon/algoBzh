@@ -16,33 +16,30 @@
 
 
 <div class="container-fluid">
-    <div class= "row en-tete">
+    <div class= "row en-tete image2">
 
-        <div class="col-lg-5"></div>
-        <div class="col-lg-1">
-
-            <img src="img/AlgoBreizh_Logo_128px.png" alt="#">
-        </div>
-        <div class="col-lg-1"><h1>AlgoBreizh</h1></div>
-        <div class="col-lg-3"></div>
-        <div class="col-lg-1">
-
-            <h3> Bonjour <?php echo $utilisateur->affNom(); ?> </h3>
-
-            <a href="index.php?c=espaceUtilisateur&amp;p=deco" class="btn btn-warning btn-deco">Deconnexion</a>
-
-        </div>
-
+        <div class="col-lg-4 user "><h3> Bonjour <?php echo $utilisateur->affNom(); ?> </h3></div>
+         <!--<div class="col-lg-2"></div>-->
+        <div class="col-lg-4 "><h1>AlgoBreizh</h1></div>
+        <!--<div class="col-lg-2"></div>-->
+        <div class="col-lg-4 "><a href="index.php?c=espaceUtilisateur&amp;p=deco" class="btn btn-warning btn-deco">Deconnexion</a></div>
     </div>
     <div class="row">
-        <div class="col-lg-1"></div>
-        <nav class="navbar navbar-default col-lg-10 menu">
+    	<div class="col-lg-2">
+
+		</div>
+        <div class="col-lg-10">
+
+        </div>
+    </div>
+    <div class="row">
+        <nav class="navbar navbar-default col-lg-12 menu">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php?c=espaceUtilisateur">Espace Client:</a>
+                    <a class="navbar-brand police" href="index.php?c=espaceUtilisateur">Espace Client:</a>
                 </div>
                 <div>
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav police">
                         <li><a href="index.php?c=espaceUtilisateur&amp;p=factures">Factures</a></li>
                         <li><a href="index.php?c=espaceUtilisateur&amp;p=commandes">Mes commandes</a></li>
                         <li><a href="index.php?c=espaceUtilisateur&amp;p=saisir">Saisir une commande</a></li>
@@ -50,25 +47,26 @@
                 </div>
             </div>
         </nav>
-        <div class="col-lg-1"></div>
     </div>
     <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10 panel panel-default">
+        <div class="col-lg-12 panel panel-default">
 
             <?php include $contenu; ?>
 
         </div>
-        <div class="col-lg-1"></div>
     </div>
 </div>
+</div>
 
+
+</div>
 <footer class="footer">
-    <div class="col-lg-1"></div>
-    <div class="panel-footer col-lg-10" >
+
+    <div class="panel-footer col-lg-12" >
         <p>@ Algobreizh 2016 </p>
     </div>
 </footer>
+
 </body>
 </html>
 

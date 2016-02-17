@@ -26,7 +26,7 @@ class Familles
             foreach ($this->familles as $famille) {
 
 
-                echo "<li><a href='#' onclick='getFamille(" . $famille["idFamille"] . ");'>" . $famille["libelleFamille"] . "</a></li>";
+                echo "<li class='elementprod'><a href='#' onclick='getFamille(" . $famille["idFamille"] . ");'>" . $famille["libelleFamille"] . "</a></li>";
             }
 
         } else {

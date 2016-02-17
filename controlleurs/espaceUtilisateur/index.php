@@ -10,7 +10,6 @@ include "modeles/espaceUtilisateur/Panier.php";
 include "modeles/espaceUtilisateur/Produit.php";
 include "modeles/espaceUtilisateur/Utilisateur.php";
 include "modeles/espaceUtilisateur/Commande.php";
-include "modeles/espaceUtilisateur/CommandesT.php";
 
 
 
@@ -18,7 +17,7 @@ $session = new Session();
 if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
 
     $utilisateur = new Utilisateur($_SESSION["codeClient"]);
-
+    $_SESSION["utilisateur"] = serialize($utilisateur);
 
     if ($_SESSION["typeCompte"] == 0) {
         if (!isset($_GET["p"])) {
@@ -106,9 +105,6 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
             $panier->inserer();
             $contenu = "vues/parts/reussi.php";
             include "vues/espaceCLientVue.php";
-            header("refresh:5;url=index.php?c=espaceUtilisateur");
-
-
 
 
 
@@ -120,7 +116,7 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
 
         if (!isset($_GET["p"])){
 
-            $commandesT = new CommandesT();
+            $commandes = new Commandes();
             $contenu = "vues/parts/affCommandesT.php";
             include "vues/espaceTele.php";
 
@@ -131,14 +127,14 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
 
             if ($_GET["p"] == "commandes") {
 
-                $commandesT = new CommandesT();
+                $commandes = new Commandes();
                 $contenu = "vues/parts/affCommandesT.php";
                 include "vues/espaceTele.php";
 
             } else if ($_GET["p"] == "validation") {
 
                 $commande = new Commande();
-                $commande->valider( $_GET["id"]);
+                $commande->valider($_GET["id"]);
 
 
             } else if ($_GET["p"] == "deco") {

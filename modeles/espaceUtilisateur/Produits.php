@@ -21,21 +21,27 @@ class Produits
 
         if (!empty($this->produits)) {
             foreach ($this->produits as $produit) {
-                echo "<tr>";
-                echo "<td> <img src=" . $produit["imagesArticle"] . "><img/></td>";
-                echo "<td>" . $produit["libelleArticle"] . " <br/> <div class = 'enPetit'>" . $produit["codeArticle"] . "</div></td>";
-                echo "<td class='pCenter'>" . $produit["prix"]  . " € </td>";
-                echo "<td>" . $produit["unite"] . "</td>";
-                echo "<td class='pCenter' id ='td".$produit["idArticle"]."'> <input type='number' min='1' max='999' value='1' size='1'id ='qte".$produit["idArticle"]."'> <button onclick='addProduit(".$produit['idArticle'].");'><span class='glyphicon glyphicon-plus-sign'></span></button></td>";
-                echo "</tr>";
+				echo "<div>";
+				echo "<figure class='effect-Beauty'>";
+                echo "<img src=" . $produit["imagesArticle"] . "><img/>";
+                echo "<figcaption><h2>" . $produit["libelleArticle"] . "" . $produit["codeArticle"] . "</h2>";
+                echo "<p>" . $produit["prix"] . " €";
+                echo " " . $produit["unite"] . "</p>";
+                echo "<div id ='td".$produit["idArticle"]."'><input type='number' min='1' max='999' value='1' size='1'id ='qte".$produit["idArticle"]."'> <a href='#ancreprod' onclick='addProduit(".$produit['idArticle'].");' class='ajoutprod' >Ajouter au panier</a></div>";
+               echo "</figcaption></figure>";
+			   echo "</div>";
             }
 
         } else {
 
-            echo "<tr><td colspan='5'>Il n'y a pas de produits à afficher</td></tr>";
+            echo "<p>Il n'y a pas de produits à afficher</p>";
         }
 
     }
+
+
+
+
 
 
 
