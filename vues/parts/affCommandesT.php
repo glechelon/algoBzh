@@ -5,7 +5,7 @@
 
     <?php
 
-    $commandesT->affichage();
+    $commandes->affichage();
 
     ?>
 

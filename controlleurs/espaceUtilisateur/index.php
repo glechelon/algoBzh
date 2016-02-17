@@ -116,7 +116,8 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
 
         if (!isset($_GET["p"])){
 
-            $commandes = new Commandes();
+            $utilisateur = unserialize($_SESSION["utilisateur"]);
+            $commandes = new Commandes($utilisateur->getCode());
             $contenu = "vues/parts/affCommandesT.php";
             include "vues/espaceTele.php";
 
