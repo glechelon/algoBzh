@@ -11,11 +11,13 @@ class Produit
     private $unite;
     private $tva;
     private $famille;
+    private $qte;
 
-    function Produit($id){
+    function Produit($id)
+    {
 
         $co = connexion();
-        $req = "SELECT * FROM articles WHERE idArticle =".$id;
+        $req = "SELECT * FROM articles WHERE idArticle =" . $id;
         $res = requeteExe($co, $req);
         $res = $res->fetch(PDO::FETCH_ASSOC);
         $this->id = $res["idArticle"];
@@ -24,47 +26,49 @@ class Produit
         $this->image = $res["imagesArticle"];
         $this->prix = $res["prix"];
         $this->unite = $res["unite"];
-        $this->tva = $res["tva"];
+        $this->tva = $res["TVA"];
         $this->famille = $res["idFamille"];
+        $this->qte = 1;
     }
 
-    public function getId()
+    public function setQte($q)
     {
-        return $this->id;
+
+        $this->qte = $q;
+
     }
 
-    public function getCode()
+
+
+    public function PrixT()
     {
-        return $this->code;
+
+        return ($this->prix * $this->qte);
+
     }
 
-    public function getLibelle()
+
+
+    public function affichage()
     {
-        return $this->libelle;
+
+        echo "<tr>";
+        echo "<td>".$this->code."</td>";
+        echo "<td>".$this->qte."</td>";
+        echo "<td>".$this->prix." €</td>";
+        echo "<td>".$this->prixT()." €</td>";
+        echo "</tr>";
+
     }
 
-    public function getFamille()
-    {
-        return $this->famille;
+    public function inserer(){
+
+        $co = connexion();
+        $req = "INSERT INTO details (codeArticle, qteArticle, montant, idCommande_commandes, idArticle) VALUES ('".$this->code."', ".$this->qte.", ".$this->prixT()." , (SELECT MAX(idCOmmande) FROM commandes) , ".$this->id." )";
+        $res = requeteExe($co, $req);
+
     }
 
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    public function getPrix()
-    {
-        return $this->prix;
-    }
-
-    public function getTva()
-    {
-        return $this->tva;
-    }
-
-    public function getUnite()
-    {
-        return $this->unite;
-    }
 }
+
+

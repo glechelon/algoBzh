@@ -8,11 +8,12 @@
 	<br/>
 	<label>e-mail:</label>
 	<br/>
-	<input type="text" name="mail"/>
+	<input type="email" name="mail"/>
 	<br/>
 	<label>Confimation e-mail:</label>
 	<br/>
-	<input type="text" name="mailC">
+	<input type="email" name="mailC">
+
 
 
 	<br />
@@ -27,4 +28,5 @@
 
 	<input type = "submit" value = "Soumettre"/>
 
+	<a href="index.php" > Retour</a>
 </form>

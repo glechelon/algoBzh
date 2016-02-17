@@ -8,11 +8,11 @@ include "../portail/outilsSql.php";
 
 
 
-echo'<table class = "table tableProd" >';
+echo '<table class = "table tableProd" >';
 
 
 
-   echo' <tr> <th> Image du produit </th>  <th> Libellé du produit </th>  <th class="pCenter"> Prix </th> <th> Unité </th> <th> Ajouter au panier </th>  </tr>';
+   echo  '<tr> <th> Image du produit </th>  <th> Libellé du produit </th>  <th class="pCenter"> Prix </th> <th> Unité </th> <th class="pCenter"> Ajouter au panier </th>  </tr>';
 
 
 
@@ -34,5 +34,14 @@ echo'</table>';
 
 
 ?>
+
+<form action="index.php?c=espaceUtilisateur&amp;p=valider" method="post">
+    <div class ='container-fluid'>
+        <div class="col-lg-4"></div>
+        <button  class="col-lg-4"><span class =" glyphicon glyphicon-ok"></span> Etape 2: validation  de la commande</button>
+        <div class="col-lg-4"></div>
+    </div>
+
+</form>
 
 

@@ -1,0 +1,12 @@
+
+
+
+
+
+    <?php
+
+    $commandesT->affichage();
+
+    ?>
+
+

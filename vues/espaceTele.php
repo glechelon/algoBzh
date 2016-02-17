@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="pages/styleCss.css">
-
+    <!--<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>-->
     <title>Accueil</title>
 
     <script type="text/javascript" src="JS/lib.js"></script>
@@ -43,9 +43,8 @@
                 </div>
                 <div>
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php?c=espaceUtilisateur&amp;p=factures">Factures</a></li>
-                        <li><a href="index.php?c=espaceUtilisateur&amp;p=commandes">Mes commandes</a></li>
-                        <li><a href="index.php?c=espaceUtilisateur&amp;p=saisir">Saisir une commande</a></li>
+                        <li><a href="index.php?c=espaceUtilisateur&amp;p=commandes">Commandes</a></li>
+
                     </ul>
                 </div>
             </div>

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="pages/styleCss.css">
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+   <!-- <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>-->
     <title>Accueil</title>
 
     <script type="text/javascript" src="../JS/lib.js"></script>

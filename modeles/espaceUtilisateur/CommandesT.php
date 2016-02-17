@@ -1,16 +1,16 @@
 <?php
 
 
-class Commandes
+class CommandesT
 {
 
     private $commandes;
 
 
-    function Commandes($code){
+    function CommandesT(){
 
         $co = connexion();
-        $req = "SELECT * FROM commandes WHERE valide = 0 AND codeCLient ='".$code."' ORDER BY dateCommande DESC LIMIT 20";
+        $req = "SELECT * FROM commandes WHERE valide = 0 ORDER BY dateCommande DESC ";
         $res = requeteExe($co,$req);
         $res = $res->fetchAll(PDO::FETCH_ASSOC);
         $this->commandes = $res;
@@ -21,21 +21,24 @@ class Commandes
 
 
 
-    public function affichage()
-    {
+
+
+    function affichage(){
+
+
 
         if (!empty($this->commandes)) {
+
 
 
             foreach ($this->commandes as $commande){
                 echo "</br>";
                 echo "<table class='table table-striped'>";
                 echo "<tr>";
-                echo "<th> Numéro de commande: ";
-                echo $commande["idCommande"]."</th>";
+                echo "<th> Numéro de commande: ".$commande["idCommande"]."</th>";
+                echo "<th colspan='3' class='pCenter'>";
                 $c = "c" + $commande["idCommande"];
-                echo "<th colspan='3'>";
-                echo "Date de la commande:".$commande["dateCommande"];
+                echo "Code du client:  ".$commande["codeClient"];
                 echo "</th>";
                 echo "</tr>";
                 $$c = new Commande();
@@ -47,23 +50,35 @@ class Commandes
                 echo "<th>Prix totale</th>";
                 echo "</tr>";
                 $$c->affichage();
+                echo "<tr class='success'>";
+                echo "<td colspan='4' class='pCenter' id ='v".$commande['idCommande']."'>";
+                echo "<button type='submit' value ='valider' onclick='valider(".$commande['idCommande'].")'> Valider <span class='glyphicon glyphicon-ok-sign'>  </span></input>";
+                echo "</td>";
+                echo "</tr>";
                 echo "</table>";
                 echo "</br>";
                 echo "<hr>";
 
 
+
+
             }
 
-        } else{
 
 
-            echo "Il n'a aucune commandes à afficher!";
+        } else {
+
+
+            echo "<tr> <td colspan='5'>Il n'a aucune facture à afficher!</td> </tr>";
 
 
         }
+
+
+
+
+
     }
-
-
 
 
 

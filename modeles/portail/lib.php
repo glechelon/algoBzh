@@ -47,7 +47,7 @@ function inscription()
 {
 
 
-    if (!empty($_POST["numCli"]) and !verifInscrit()) {
+    if (!empty($_POST["numCli"]) and verifInscrit()) {
 
 
         $numCli = $_POST['numCli'];
@@ -64,6 +64,7 @@ function inscription()
                     insertMail($_POST["numCli"] ,$_POST["mail"]);
                     $mdp = generPass();
                     $log = fopen('logs/log.txt', 'a+');
+                    //mail("to: guichou9@live.fr, subject: Mot de passe,  ");
                     fputs($log, $mdp);
                     fclose($log);
                     $mdp = hashMdp($mdp);
