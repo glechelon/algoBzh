@@ -6,15 +6,13 @@
 
 function sendPass($numCli){
 
-    ini_set("SMTP","smtp.gmail.com" );
-    ini_set('sendmail_from', "guichou9@gmail.com");
-    ini_set('smtp_port',465);
+
 
     $mail = recupMail($numCli);
     $pass = generPass();
 
     $message = "Cher client,\r\n \r\n Voici votre mot de passe: ".$pass;
-
+    mail($mail, "mot de passe", $pass, "");
 
 
     $hash = hashMdp($pass);
