@@ -51,6 +51,8 @@ function inscription()
 
         if ($exist == true) {
 
+            if (!checkInscrit($_POST['numCli'])){
+
             if (!empty($_POST["mail"]) and !empty($_POST["mailC"])) {
 
 
@@ -84,6 +86,14 @@ function inscription()
                 $content = "vues/parts/demandeMdp.php";
                 $_SESSION["errorSend"] = "Tout les champs ne sont pas remplis";
 
+            }
+
+
+            } else {
+
+
+                $content = "vues/parts/demandeMdp.php";
+                $_SESSION["errorSend"] = "Vous êtes déjà inscrit.";
 
             }
 

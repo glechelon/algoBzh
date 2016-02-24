@@ -168,6 +168,28 @@ function selectType($id){
 	return $r;
 }
 
+function checkInscrit($id){
+
+	$co = connexion();
+	$req = "SELECT email, motDePasse FROM utilisateurs WHERE codeClient ='".$id."'";
+	$res = requeteExe($co, $req);
+	$r = $res->fetch();
+
+	if (is_null($r)){
+
+		$inscrit = false;
+
+	} else {
+
+
+		$inscrit = true;
+
+	}
+
+
+	return $inscrit;
+}
+
 
 
 ?>
