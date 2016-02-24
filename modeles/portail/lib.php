@@ -4,18 +4,16 @@
 
 //fonction d'envoi du mail contenant le mot de passe du client
 
-function sendPass($numCli){
+function sendPass($pass, $mail){
 
 
 
-    $mail = recupMail($numCli);
-    $pass = generPass();
 
     $message = "Cher client,\r\n \r\n Voici votre mot de passe: ".$pass;
-    mail($mail, "mot de passe", $pass, "");
+    mail($mail, "mot de passe", $message, " OUI");
 
 
-    $hash = hashMdp($pass);
+
 
 }
 
@@ -61,8 +59,9 @@ function inscription()
 
                     insertMail($_POST["numCli"] ,$_POST["mail"]);
                     $mdp = generPass();
+                    sendPass($mdp ,$_POST["mail"]); 
                     $log = fopen('logs/log.txt', 'a+');
-                    //mail("to: guichou9@live.fr, subject: Mot de passe,  ");
+
                     fputs($log, $mdp);
                     fclose($log);
                     $mdp = hashMdp($mdp);
