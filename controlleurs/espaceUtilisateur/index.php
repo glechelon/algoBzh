@@ -3,6 +3,7 @@
 
 
 include "modeles/espaceUtilisateur/Commandes.php";
+include "modeles/espaceUtilisateur/CommandesT.php";
 include "modeles/espaceUtilisateur/Factures.php";
 include "modeles/espaceUtilisateur/Produits.php";
 include "modeles/espaceUtilisateur/Familles.php";
@@ -104,7 +105,7 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
             $commande->creer($panier->total(), $date, $utilisateur->getCode(), $utilisateur->getId());
             $panier->inserer();
             $contenu = "vues/parts/reussi.php";
-            include "vues/espaceCLientVue.php";
+            include "vues/espaceClientVue.php";
 
 
 
@@ -117,7 +118,7 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
         if (!isset($_GET["p"])){
 
             $utilisateur = unserialize($_SESSION["utilisateur"]);
-            $commandes = new Commandes($utilisateur->getCode());
+            $commandes = new CommandesT();
             $contenu = "vues/parts/affCommandesT.php";
             include "vues/espaceTele.php";
 
@@ -128,7 +129,7 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
 
             if ($_GET["p"] == "commandes") {
 
-                $commandes = new Commandes();
+                $commandes = new CommandesT();
                 $contenu = "vues/parts/affCommandesT.php";
                 include "vues/espaceTele.php";
 
@@ -143,11 +144,29 @@ if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"] == "TRUE") {
                 $session->deconnexion();
                 header("location:index.php");
 
+            } else if ($_GET["p"] == "ajoutProduit"){
+
+
+                $contenu = "vues/parts/formAProd.php";
+                include "vues/espaceTele.php";
+
+            } else if ($_GET["p"] == "insererProduit"){
+                
+                $produit = new Produit(null);
+                $produit->creer($_POST["code"], $_POST["libelle"], $_POST["image"], $_POST["prix"], $_POST["unite"], $_POST["tva"], $_POST["famille"]);
+
+                    $produit->add();
+                    $contenu = "vues/parts/prodAjoute.html";
+                    include "vues/espaceTele.php";
+
+                
+
+
             }
         }
     }
 
-
+//CAS NON PRIS EN CHARGE -> ERREUR 
 
 } else {
 

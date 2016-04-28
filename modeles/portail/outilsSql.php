@@ -10,8 +10,8 @@ function connexion(){
 
 $host = 'localhost';
 $dbName = 'newalb';
-$user = 'root';
-$pwd = '';
+$user = 'algobzh';
+$pwd = 'algobzh';
 
 try {
 	$connexion = new PDO('mysql:host='.$host.';dbname='.$dbName.'',$user,$pwd,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
