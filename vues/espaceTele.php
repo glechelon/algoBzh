@@ -44,7 +44,7 @@
                 <div>
                     <ul class="nav navbar-nav">
                         <li><a href="index.php?c=espaceUtilisateur&amp;p=commandes">Commandes</a></li>
-
+                        <li><a href ="index.php?c=espaceUtilisateur&amp;p=ajoutProduit">Ajouter un produit</a></li>
                     </ul>
                 </div>
             </div>
