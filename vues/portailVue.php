@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="pages/styleCss.css">
+    <link rel="stylesheet" href="css/styleCss.css">
    <!-- <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>-->
     <title>Accueil</title>
 

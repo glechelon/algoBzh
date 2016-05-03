@@ -9,9 +9,9 @@
 function connexion(){
 
 $host = 'localhost';
-$dbName = 'newalb';
-$user = 'algobzh';
-$pwd = 'algobzh';
+$dbName = 'gbmbm';
+$user = 'gbmbm';
+$pwd = 'Pa$$w0rd';
 
 try {
 	$connexion = new PDO('mysql:host='.$host.';dbname='.$dbName.'',$user,$pwd,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
