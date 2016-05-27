@@ -9,9 +9,9 @@
 function connexion(){
 
 $host = 'localhost';
-$dbName = 'gbmbm';
-$user = 'gbmbm';
-$pwd = 'Pa$$w0rd';
+$dbName = 'newalb';
+$user = 'algobzh';
+$pwd = 'algobzh';
 
 try {
 	$connexion = new PDO('mysql:host='.$host.';dbname='.$dbName.'',$user,$pwd,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -175,7 +175,8 @@ function checkInscrit($id){
 	$res = requeteExe($co, $req);
 	$r = $res->fetch();
 
-	if (is_null($r)){
+	if (($r[0][0] == "") && ($r[0][1] == "")){
+
 
 		$inscrit = false;
 
@@ -185,7 +186,6 @@ function checkInscrit($id){
 		$inscrit = true;
 
 	}
-
 
 	return $inscrit;
 }

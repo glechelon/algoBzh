@@ -53,11 +53,16 @@ function inscription()
 
             if (!checkInscrit($_POST['numCli'])){
 
+
+
             if (!empty($_POST["mail"]) and !empty($_POST["mailC"])) {
+
+
 
 
                 if ($_POST["mail"] == $_POST["mailC"]) {
 
+                    
 
                     insertMail($_POST["numCli"] ,$_POST["mail"]);
                     $mdp = generPass();
@@ -75,8 +80,9 @@ function inscription()
 
                 } else {
 
+                   
 
-                    $content = "vues/parts/demandeMpd.php";
+                    $content = "vues/parts/demandeMdp.php";
                     $_SESSION["errorSend"] = "les deux adresse mails ne sont pas identiques.";
                 }
 
